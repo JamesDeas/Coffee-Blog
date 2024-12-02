@@ -11,6 +11,11 @@
                 <h4 class="font-semibold mb-4">Links</h4>
 
                 <ul>
+
+                    <li>
+                        <a href="/admin/dashboard" class="{{ request()->is('admin/dashboard') ? 'text-blue-500' : '' }}">Dashboard</a>
+                    </li>
+
                     <li>
                         <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
                     </li>
