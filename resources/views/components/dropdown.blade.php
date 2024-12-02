@@ -1,3 +1,14 @@
+{{-- @props(['trigger'])
+
+<div x-data="{show: false }" @click.away="show = false" class="relative">
+
+<div @click="show = ! show">
+    {{ $trigger}}
+</div>
+
+<div x-show="show" class="py-2 absolute bg-gray-100 mt-2 rounded-xl w-full z-50 overflow-auto max-h-52" style="">
+    {{ $slot }}
+</div> --}}
 @props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white dark:bg-gray-700'])
 
 @php
