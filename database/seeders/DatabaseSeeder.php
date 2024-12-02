@@ -8,6 +8,8 @@ use App\Models\Category;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,16 +17,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Disable foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         User::truncate();
         Post::truncate();
         Category::truncate();
+
+        // Re-enable foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $user = User::factory()->create([
             'name' => 'John Doe'
@@ -34,48 +36,6 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id
         ]);
 
-        // $user = User::factory()->create();
-
-        // $personal = Category::create([
-        //     'title' => 'Personal',
-        //     'slug' => 'personal'
-        // ]);
-
-        // $work = Category::create([
-        //     'title' => 'Work',
-        //     'slug' => 'work'
-        // ]);
-
-        // $hobbies = Category::create([
-        //     'title' => 'Hobbies',
-        //     'slug' => 'hobbies'
-        // ]);
-
-        // Post::create([
-        //     'user_id' => $user->id,
-        //     'category_id' => $personal->id,
-        //     'title' => 'My Personal Post',
-        //     'slug' => 'my-personal-post',
-        //     'excerpt' => '<p>lorem ipsum</p>',
-        //     'body' => '<p>Lorem ipsum dolar sit amet</p>'
-        // ]);
-
-        // Post::create([
-        //     'user_id' => $user->id,
-        //     'category_id' => $work->id,
-        //     'title' => 'My Work Post',
-        //     'slug' => 'my-work-post',
-        //     'excerpt' => '<p>lorem ipsum</p>',
-        //     'body' => '<p>Lorem ipsum dolar sit amet</p>'
-        // ]);
-
-        // Post::create([
-        //     'user_id' => $user->id,
-        //     'category_id' => $hobbies->id,
-        //     'title' => 'My Hobbies Post',
-        //     'slug' => 'my-hobbies-post',
-        //     'excerpt' => '<p>lorem ipsum</p>',
-        //     'body' => '<p>Lorem ipsum dolar sit amet'
-        // ]);
+        
     }
 }
