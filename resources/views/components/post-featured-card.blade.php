@@ -6,7 +6,7 @@
                     <div class="flex-1 lg:mr-8">
 
 
-                        <img src="{{ asset('storage/' . $post->thumbnail)}}" alt="Blog Post illustration" class="rounded-xl">
+                        <img src="{{ asset('storage/' . $post->thumbnail)}}" alt="Post Thumbnail" class="rounded-xl">
 
 
                     </div>
@@ -41,7 +41,7 @@
 
                         <footer class="flex justify-between items-center mt-8">
                             <div class="flex items-center text-sm">
-                                <img src="/images/lary-avatar.svg" alt="Tiegan avatar">
+                                <img src="/images/lary-avatar.svg" alt="User Image">
                                 <div class="ml-3">
                                     <h5 class="font-bold"><a href="/?authors={{ $post->author->username }}"> {{ $post->author->name }}</a></h5>
                                 </div>
