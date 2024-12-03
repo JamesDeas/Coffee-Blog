@@ -36,8 +36,8 @@
 
                         </x-slot>
 
-                        <x-dropdown-item href="/admin/dashboard">Dashboard</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts/create">New Post</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</x-dropdown-item>
                         <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
 
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
@@ -47,8 +47,8 @@
                     </x-dropdown>
                     
                 @else
-                    <a href="/register" class="text-xs font-bold uppercase">Register</a>
-                    <a href="/login" class="ml-6 text-xs font-bold uppercase">Log In</a>
+                    <a href="/register" class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">Register</a>
+                    <a href="/login" class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">Log In</a>
                 @endauth
 
                 <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
