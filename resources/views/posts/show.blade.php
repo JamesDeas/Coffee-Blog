@@ -1,6 +1,6 @@
 <x-layout> 
 
-    <body style="font-family: Open Sans, sans-serif">
+    <body style="background-image: url('{{ asset('storage/elements/brick-bg.png') }}'); background-size: cover; background-position: center;">
         <section class="px-6 py-8">
 
             <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
@@ -13,7 +13,7 @@
                         </p>
 
                         <div class="flex items-center lg:justify-center text-sm mt-4">
-                            <img src="/images/lary-avatar.svg" alt="James avatar">
+                            <img src="/storage/elements/avatar-1.png" alt="James Avatar" width="80">
                             <div class="ml-3 text-left">
                                 <h5 class="font-bold"><a href="/?authors={{ $post->author->username }}"> {{ $post->author->name }}</a></h5>
                             </div>

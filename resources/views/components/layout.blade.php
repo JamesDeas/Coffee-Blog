@@ -15,12 +15,13 @@
 </style>
 
 
-<body style="font-family: Open Sans, sans-serif">
+<body style="font-family: 'Merriweather', serif; background-image: url('storage/elements/brick-bg.png'); background-size: cover; background-position: center;">
+
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/storage/elements/mycoffee-logo.png" alt="My Coffee Logo" width="250" height="16">
                 </a>
             </div>
 
@@ -32,14 +33,14 @@
 
                         <x-slot name="trigger">
 
-                            <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</button>
+                            <button class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" style="border: solid 2px #371f15; background-color: #6F4E37; hover:background-color: #5A3A2C;">Welcome, {{ auth()->user()->name }}!</button>
 
                         </x-slot>
 
                         @if (auth()->user()->can('admin'))
 
-                            <x-dropdown-item href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</x-dropdown-item>
-                            <x-dropdown-item href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</x-dropdown-item>
+                            <x-dropdown-item href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-gray-600' : '' }}">All Posts</x-dropdown-item>
+                            <x-dropdown-item href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-gray-600' : '' }}">New Post</x-dropdown-item>
                         @endif
                         
                         <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
@@ -51,13 +52,13 @@
                     </x-dropdown>
                     
                 @else
-                    <a href="/register" class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">Register</a>
-                    <a href="/login" class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">Log In</a>
+                    <a href="/register" class="text-sm font-bold uppercase text-white {{ request()->is('register') ? 'text-gray-300' : '' }}" style="background-color: #976c4f; padding: 8px 16px; border: solid 2px #371f15; border-radius: 12px;">Register</a>
+                    <a href="/login" class="ml-6 text-sm font-bold uppercase text-white {{ request()->is('login') ? 'text-gray-300' : '' }}" style="background-color: #976c4f; padding: 8px 16px; border: solid 2px #371f15; border-radius: 12px;">Log In</a>
                 @endauth
 
-                <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                {{-- <a href="#newsletter" class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" style="background-color: #6F4E37; hover:background-color: #5A3A2C;">
                     Subscribe for Updates
-                </a>
+                </a> --}}
             </div>
         </nav>
 
@@ -68,7 +69,7 @@
        
 
         <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-            <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+            <img src="/storage/elements/avatar-2.png" alt="" class="mx-auto mb-6" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
 
@@ -86,7 +87,7 @@
                         </div>
 
                         <button type="submit"
-                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
+                                class="transition-colors duration-300 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8" style="background-color: #6F4E37; hover:background-color: #5A3A2C;"
                         >
                             Subscribe
                         </button>

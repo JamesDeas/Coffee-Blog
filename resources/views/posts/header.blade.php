@@ -1,7 +1,7 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
 
-    <h1 class="text-4xl">
-        Latest <span class="text-blue-500">Laravel From Scratch</span> News
+    <h1 class="text-5xl text-white">
+        Find Your Next <span class="font-semibold">Coffee</span> Trend
     </h1>
     
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
