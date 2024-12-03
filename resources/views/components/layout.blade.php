@@ -36,8 +36,12 @@
 
                         </x-slot>
 
-                        <x-dropdown-item href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</x-dropdown-item>
+                        @if (auth()->user()->can('admin'))
+
+                            <x-dropdown-item href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</x-dropdown-item>
+                            <x-dropdown-item href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</x-dropdown-item>
+                        @endif
+                        
                         <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
 
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
