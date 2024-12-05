@@ -15,7 +15,7 @@
 
 
                 <div class="mb-6">
-                    <button type="submit" class="text-white rounded-xl py-2 px-4 hover:bg-brown-700" style="border: solid 2px #382114; background-color: #976c4f;">Log In</button>
+                    <button type="submit" class="text-white rounded-xl py-2 px-4 hover:bg-brown-700"  style="border-top: 2px solid #3a2116; border-left: 6px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 6px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:500;">Log In</button>
                 </div>
 
                 {{-- @if ($errors->any())

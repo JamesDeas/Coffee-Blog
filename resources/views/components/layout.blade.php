@@ -1,10 +1,13 @@
 <!doctype html>
 
 <title>Laravel From Scratch Blog</title>
+
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 
 <style>
 
@@ -15,10 +18,12 @@
 </style>
 
 
-<body style="font-family: 'Merriweather', serif; background-image: url('storage/elements/brick-bg.png'); background-size: cover; background-position: center;">
 
-    <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center">
+
+<body>
+
+    <section class="px-6 py-8" style="background-image: url('{{ asset('storage/elements/brick-bg.png') }}'); background-size: cover; background-position: center;">
+        <nav class="md:flex md:justify-between md:items-center pt-2 pb-2 pr-4 pl-4 rounded-xl" style="background-color:white;">
             <div>
                 <a href="/">
                     <img src="/storage/elements/mycoffee-logo.png" alt="My Coffee Logo" width="250" height="16">
@@ -33,7 +38,7 @@
 
                         <x-slot name="trigger">
 
-                            <button class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" style="border: solid 2px #371f15; background-color: #6F4E37; hover:background-color: #5A3A2C;">Welcome, {{ auth()->user()->name }}!</button>
+                            <button class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" style="border-top: 2px solid #3a2116; border-left: 6px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 6px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:100;">Welcome, {{ auth()->user()->name }}!</button>
 
                         </x-slot>
 
@@ -52,8 +57,8 @@
                     </x-dropdown>
                     
                 @else
-                    <a href="/register" class="text-sm font-bold uppercase text-white {{ request()->is('register') ? 'text-gray-300' : '' }}" style="background-color: #976c4f; padding: 8px 16px; border: solid 2px #371f15; border-radius: 12px;">Register</a>
-                    <a href="/login" class="ml-6 text-sm font-bold uppercase text-white {{ request()->is('login') ? 'text-gray-300' : '' }}" style="background-color: #976c4f; padding: 8px 16px; border: solid 2px #371f15; border-radius: 12px;">Log In</a>
+                    <a href="/register" class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-6 {{ request()->is('register') ? 'text-gray-300' : '' }}" style="border-top: 2px solid #3a2116; border-left: 6px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 6px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:500;">Register</a>
+                    <a href="/login" class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8 {{ request()->is('login') ? 'text-gray-300' : '' }}" style="border-top: 2px solid #3a2116; border-left: 6px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 6px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:500;">Log In</a>
                 @endauth
 
                 {{-- <a href="#newsletter" class="ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5" style="background-color: #6F4E37; hover:background-color: #5A3A2C;">
@@ -84,8 +89,8 @@
 
                     <form method="POST" action="{{ route('subscribe') }}">
                         @csrf
-                        <input id="email" type="email" name="email" placeholder="Your email address" required>
-                        <button type="submit">Subscribe</button>
+                        <input class="m-3 ml-5 rounded-xl p-2" id="email" type="email" name="email" placeholder="Your email address" required>
+                        <button style="border-top: 2px solid #3a2116; border-left: 2px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 2px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:500;" class="m-4 rounded-full text-xs font-semibold text-white uppercase py-3 px-8" type="submit">Subscribe</button>
                     </form>
                 </div>
             </div>

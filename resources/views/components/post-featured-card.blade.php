@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="mt-4">
-                                <h1 class="text-3xl">
+                                <h1 class="text-5xl" style="font-family: 'shrikhand', serif; color: #3a2116;">
                                     <a href="/posts/{{ $post->slug }}">
                                         {{ $post->title }}
                                     </a>
@@ -32,24 +32,22 @@
                             </div>
                         </header>
 
-                        <div class="text-sm mt-2 space-y-4">
-                   
-                            {!! $post->excerpt !!}
-
-                         
+                        <div class="flex justify-start text-lg mt-2 space-y-4 w-full">
+                            <div class="w-2/3"> 
+                                {!! $post->excerpt !!}
+                            </div>
                         </div>
-
                         <footer class="flex justify-between items-center mt-8">
                             <div class="flex items-center text-sm">
-                                <img src="/storage/elements/avatar-1.png" alt="User Image" width="80">
+                                <img src="/storage/elements/avatar-1.png" alt="User Image" width="120">
                                 <div class="ml-3">
-                                    <h5 class="font-bold"><a href="/?authors={{ $post->author->username }}"> {{ $post->author->name }}</a></h5>
+                                    <h5 style="font-family: 'shrikhand', serif; color: #3a2116; font-weight:100;" class="text-lg font-bold"><a href="/?authors={{ $post->author->username }}">By {{ $post->author->name }}</a></h5>
                                 </div>
                             </div>
 
-                            <div class="hidden lg:block">
+                            <div class="hidden lg:block mr-10">
                                 <a href="/posts/{{ $post->slug }}"
-                                   class="transition-colors duration-300 text-xs font-semibold rounded-full py-2 px-8 text-white" style="background-color: #976c4f; hover:background-color: #5A3A2C;"
+                                   class="transition-colors duration-300 text-xs font-semibold rounded-full py-2 px-8 text-white" style="border-top: 2px solid #3a2116; border-left: 6px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 6px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:500;"
                                 >Read More</a>
                             </div>
                         </footer>

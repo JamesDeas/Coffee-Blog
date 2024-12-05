@@ -13,7 +13,7 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <h1 class="text-3xl">
+                                    <h1 class="text-3xl" style="font-family: 'shrikhand', serif; color: #3a2116;">
                                         <a href="/posts/{{ $post->slug }}">
                                             {{ $post->title }}
                                         </a>
@@ -34,7 +34,7 @@
 
                             <footer class="flex justify-between items-center mt-8">
                                 <div class="flex items-center text-sm">
-                                    <img src="/storage/elements/avatar-3.png" alt="User Image" width="80">
+                                    {{-- <img src="/storage/elements/avatar-3.png" alt="User Image" width="80"> --}}
                                     <div class="ml-3">
                                         <h5 class="font-bold">
                                         <a href="/?authors={{ $post->author->username }}"> {{ $post->author->name }}</a></h5>
@@ -43,10 +43,11 @@
 
                                 <div>
                                     <a href="/posts/{{ $post->slug }}"
-                                       class="transition-colors duration-300 text-xs font-semibold rounded-full py-2 px-8 text-white" style="background-color: #976c4f; hover:background-color: #5A3A2C;"
+                                       class="transition-colors duration-300 text-xs font-semibold rounded-full py-2 px-8 text-white" style="border-top: 2px solid #3a2116; border-left: 6px solid #3a2116; border-right: 2px solid #3a2116; border-bottom: 6px solid #3a2116; background-color: #976c4f; hover:background-color: #5A3A2C; font-family: 'shrikhand', serif; font-weight:500;"
                                     >Read More</a>
                                 </div>
                             </footer>
                         </div>
                     </div>
                 </article>
+                
