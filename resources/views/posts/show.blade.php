@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <h1 class="font-bold text-3xl lg:text-4xl mb-10">
+                        <h1 class="font-bold text-3xl lg:text-4xl mb-10" style="font-family: 'shrikhand', serif; color: #3a2116; font-weight:100;">
                             {{ $post->title }}
                         </h1>
 
